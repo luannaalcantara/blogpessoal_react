@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom"
+
 function Navbar() {
   return (
     <>
        <div className="w-full flex justify-center py-4 bg-zinc-900 text-white border-b border-zinc-700">
         
         <div className="container flex justify-between text-lg mx-8 items-center">
-          Blog Pessoal
+        <Link to='/home' className="text-2xl font-bold">Blog Pessoal</Link>
 
           <div className='flex gap-4'>
             Postagens
