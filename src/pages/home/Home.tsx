@@ -1,88 +1,35 @@
+import ilustracao_css from "../../assets/minha-ilustracao.png";
+
 function Home() {
     return (
         <>
-            <div
-                style={{
-                    backgroundColor: "#312e81",
-                    display: "flex",
-                    justifyContent: "center"
-                }}
-            >
-                <div
-                    style={{
-                        display: "grid",
-                        gridTemplateColumns: "1fr 1fr",
-                        color: "white",
-                        width: "100%",
-                        maxWidth: "1280px",
-                    }}
-                >
-                    <div
-                        style={{
-                            display: "flex",
-                            flexDirection: "column",
-                            gap: "1rem",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            paddingTop: "1rem",
-                            paddingBottom: "1rem"
-                        }}
-                    >
-                        <h2
-                            style={{
-                                fontSize: "3rem",
-                                fontWeight: "bold"
-                            }}
-                        >
+           <div className="bg-gradient-to-br from-zinc-950 via-zinc-900 to-orange-800 flex justify-center">
+            <div className="bg-zinc-950 flex justify-center"></div>
+            <h2 className="text-5xl font-bold text-orange-400"></h2>
+                <div className='container grid grid-cols-2 text-white'>
+
+                    <div className="flex flex-col gap-4 items-center justify-center py-4">
+
+                        <h2 className="text-5xl font-bold text-orange-400">
                             Seja Bem Vinde!
                         </h2>
 
-
-
-                        <p
-                            style={{
-                                fontSize: "1.25rem"
-                            }}
-                        >
+                        <p className='text-xl text-zinc-300'>
                             Expresse aqui seus pensamentos e opiniões
                         </p>
 
-
-
-                        <div
-                            style={{
-                                display: "flex",
-                                justifyContent: "space-around",
-                                gap: "1rem"
-                            }}
-                        >
-                            <div
-                                style={{
-                                    borderRadius: "0.5rem",
-                                    color: "white",
-                                    border: "2px solid white",
-                                    padding: "0.5rem 1rem"
-                                }}
-                            >
-                                Nova Postagem
+                        <div className="flex justify-around gap-4">
+                            <div className='rounded bg-orange-500 hover:bg-orange-600 transition duration-300 text-white py-2 px-4 cursor-pointer shadow-lg shadow-orange-500/30'>                Nova Postagem
                             </div>
                         </div>
+
                     </div>
 
-
-
-                    <div
-                        style={{
-                            display: "flex",
-                            justifyContent: "center"
-                        }}
-                    >
+                    <div className="flex justify-center">
                         <img
-                            src="https://i.imgur.com/fyfri1v.png"
-                            alt="Imagem Página Home"
-                            style={{
-                                width: "66%"
-                            }}
+                            src={ilustracao_css}
+                            alt="Ilustração do blog"
+                            className='w-96 mx-auto hover:scale-105 transition duration-300'
                         />
                     </div>
                 </div>
@@ -90,7 +37,5 @@ function Home() {
         </>
     )
 }
-
-
 
 export default Home
