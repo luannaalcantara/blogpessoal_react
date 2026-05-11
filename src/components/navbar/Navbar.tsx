@@ -49,14 +49,14 @@ function Navbar() {
                             to='/temas' 
                             className='hover:text-orange-400 transition'
                         >
-                            Temas
+                          <Link to='/temas' className='hover:underline'>Temas</Link>
                         </Link>
 
                         <Link 
                             to='/cadastrartema' 
                             className='hover:text-orange-400 transition'
                         >
-                            Cadastrar tema
+                        <Link to='/cadastrartema' className='hover:underline'>Cadastrar tema</Link>
                         </Link>
 
                         <Link 
