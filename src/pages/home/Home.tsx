@@ -1,4 +1,6 @@
 import ilustracao_css from "../../assets/minha-ilustracao.png";
+import ListaPostagens from "../../components/postagem/listapostagens/ListaPostagens";
+import ModalPostagem from "../../components/postagem/modalpostagem/ModalPostagem";
 
 function Home() {
     return (
@@ -19,8 +21,10 @@ function Home() {
                         </p>
 
                         <div className="flex justify-around gap-4">
-                            <div className='rounded bg-orange-500 hover:bg-orange-600 transition duration-300 text-white py-2 px-4 cursor-pointer shadow-lg shadow-orange-500/30'>                Nova Postagem
-                            </div>
+                           
+                           <ModalPostagem />
+
+                            
                         </div>
 
                     </div>
@@ -34,6 +38,8 @@ function Home() {
                     </div>
                 </div>
             </div>
+
+             <ListaPostagens />
         </>
     )
 }

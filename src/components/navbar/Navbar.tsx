@@ -42,7 +42,7 @@ function Navbar() {
                             to='/postagens' 
                             className='hover:text-orange-400 transition'
                         >
-                            Postagens
+                         <Link to='/postagens' className='hover:underline'>Postagens</Link>
                         </Link>
 
                         <Link 
