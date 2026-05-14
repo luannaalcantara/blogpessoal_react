@@ -48,36 +48,70 @@ function ListaTemas() {
 
     return (
         <>
+   <div className="min-h-screen bg-[#1A090B] py-10 px-4">
 
-            {isLoading && (
-                <div className="flex justify-center w-full my-8">
-                    <SyncLoader
-                        color="#312e81"
-                        size={32}
-                    />
-                </div>
-            )}
-
-            <div className="flex justify-center w-full m-4">
-                <div className="container flex flex-col">
-
-                    {(!isLoading && temas.length === 0) && (
-                        <span className="text-3xl text-center my-8">
-                            Nenhum Tema foi encontrado!
-                        </span>
-                    )}
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                        {
-                            temas.map((tema) => (
-                                <CardTema key={tema.id} tema={tema} />
-                            ))
-                        }
-
-                    </div>
-                </div>
+        {isLoading && (
+            <div className="flex justify-center w-full my-12">
+                <SyncLoader
+                    color="#BD4251"
+                    size={18}
+                />
             </div>
+        )}
+
+        <div className="flex justify-center w-full">
+
+            <div className="w-full max-w-7xl flex flex-col">
+
+                <h1 className="
+                    text-5xl
+                    font-bold
+                    text-center
+                    text-[#F8ECEE]
+                    mb-12
+                ">
+                    Temas
+                </h1>
+
+                {(!isLoading && temas.length === 0) && (
+                    <div className="
+                        bg-[#260D10]
+                        border
+                        border-[#4B1B20]
+                        rounded-2xl
+                        p-8
+                        text-center
+                    ">
+                        <span className="
+                            text-2xl
+                            text-[#D78E96]
+                        ">
+                            Nenhum tema foi encontrado!
+                        </span>
+                    </div>
+                )}
+
+                <div className="
+                    grid
+                    grid-cols-1
+                    md:grid-cols-2
+                    lg:grid-cols-3
+                    gap-8
+                ">
+                    {
+                        temas.map((tema) => (
+                            <CardTema
+                                key={tema.id}
+                                tema={tema}
+                            />
+                        ))
+                    }
+                </div>
+
+            </div>
+
+        </div>
+    </div>
         </>
     )
 }

@@ -8,50 +8,47 @@ function CardPostagem({ postagem }: CardPostagensProps) {
 
     return (
 
-        <div className='border border-zinc-700 bg-zinc-900
-        flex flex-col rounded-2xl overflow-hidden justify-between
-        shadow-lg shadow-orange-500/10 hover:scale-[1.01]
-        transition duration-300'>
+        <div className='  border border-[#4B1B20] bg-[#260D10] flex flex-col rounded-2xl overflow-hidden justify-between
+    shadow-2xl hover:scale-[1.02] hover:shadow-[#BD4251]/20 transition-all duration-300'>
 
             <div>
 
                 {/* HEADER */}
-                <div className="flex w-full bg-orange-500 py-3 px-4 items-center gap-4">
+                <div className="  flex w-full bg-[#BD4251] py-3 px-4 items-center gap-4  ">
 
                     <img
-                        src={postagem.usuario?.foto}
-                        className='h-12 w-12 rounded-full object-cover border-2 border-white'
-                        alt={postagem.usuario?.nome}
-                    />
+                        src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=1200&auto=format&fit=crop"
+                        className=' h-12 w-12 rounded-full object-cover border-2 border-[#F8ECEE] '
+                        alt={postagem.usuario?.nome} />
 
-                    <h3 className='text-lg font-bold text-white uppercase'>
+                    <h3 className='text-lg font-bold text-[#F8ECEE] uppercase '>
                         {postagem.usuario?.nome}
                     </h3>
 
                 </div>
 
                 {/* CONTEÚDO */}
-                <div className='p-5 bg-zinc-950 flex flex-col gap-3'>
+                <div className=' p-5 bg-[#1A090B] flex  flex-col gap-4'>
 
-                    <h4 className='text-2xl font-bold text-orange-400 uppercase'>
+                    <h4 className=' text-2xl  font-bold text-[#CA6873] uppercase'>
                         {postagem.titulo}
                     </h4>
 
-                    <p className='text-zinc-300'>
+                    <p className='  text-[#F2D9DC] leading-relaxed'>
                         {postagem.texto}
                     </p>
 
-                    <div className="flex flex-col gap-1 text-sm text-zinc-400">
+                    <div className="flex  flex-col gap-2 text-sm text-[#D78E96] border-t border-[#4B1B20] pt-4 ">
 
                         <p>
-                            <span className="text-orange-400 font-semibold">
+                            <span className=" text-[#CA6873] font-semibold ">
                                 Tema:
                             </span>{' '}
                             {postagem.tema?.descricao}
                         </p>
 
                         <p>
-                            <span className="text-orange-400 font-semibold">
+                            <span className=" text-[#CA6873] font-semibold ">
                                 Data:
                             </span>{' '}
                             {new Intl.DateTimeFormat("pt-BR", {
@@ -69,19 +66,15 @@ function CardPostagem({ postagem }: CardPostagensProps) {
 
                 <Link
                     to={`/editarpostagem/${postagem.id}`}
-                    className='w-full text-white bg-zinc-700 
-                    hover:bg-orange-500 flex items-center 
-                    justify-center py-3 transition duration-300'
-                >
+                    className='  w-full text-[#F8ECEE] bg-[#4B1B20] hover:bg-[#712830] flex items-center justify-center py-3 transition-all
+                    duration-300'>
                     <button>Editar</button>
                 </Link>
 
                 <Link
                     to={`/deletarpostagem/${postagem.id}`}
-                    className='text-white bg-red-500 
-                    hover:bg-red-600 w-full flex 
-                    items-center justify-center transition duration-300'
-                >
+                    className=' text-[#F8ECEE] bg-[#BD4251]hover:bg-[#973540] w-full flex items-center justify-center transition-all
+                duration-300'>
                     <button>Deletar</button>
                 </Link>
 

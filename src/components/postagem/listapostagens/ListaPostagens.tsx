@@ -48,34 +48,57 @@ function ListaPostagens() {
     return (
         <>
 
-            {isLoading && (
-                <div className="flex justify-center w-full my-8">
-                    <SyncLoader
-                        color="#312e81"
-                        size={32}
-                    />
-                </div>
-            )}
+        <div className="min-h-screen bg-[#1A090B] py-10 px-4">
 
-            <div className="flex justify-center w-full my-4">
-                <div className="container flex flex-col">
-
-                    {(!isLoading && postagens.length === 0) && (
-                            <span className="text-3xl text-center my-8">
-                                Nenhuma Postagem foi encontrada!
-                            </span>
-                    )}
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 
-                                    lg:grid-cols-3 gap-8">
-                            {
-                                postagens.map((postagem) => (
-                                    <CardPostagem key={postagem.id} postagem={postagem}/>
-                                ))
-                            }
-                    </div>
-                </div>
+        {isLoading && (
+            <div className="flex justify-center w-full my-12">
+                <SyncLoader
+                    color="#BD4251"
+                    size={18}
+                />
             </div>
+        )}
+
+        <div className="flex justify-center w-full">
+
+            <div className="w-full max-w-7xl flex flex-col">
+
+                <h1 className="  text-5xl font-bold text-center text-[#F8ECEE] mb-12 ">
+                    Postagens
+                </h1>
+
+                {(!isLoading && postagens.length === 0) && (
+
+                    <div className="  bg-[#260D10]  border border-[#4B1B20]
+                        rounded-2xl p-8 text-center ">
+
+                        <span className=" text-2xl text-[#D78E96] ">
+                            Nenhuma postagem foi encontrada!
+                        </span>
+
+                    </div>
+                )}
+
+                <div
+                    className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+                        gap-8 " >
+
+                    {
+                        postagens.map((postagem) => (
+                            <CardPostagem
+                                key={postagem.id}
+                                postagem={postagem}
+                            />
+                        ))
+                    }
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
         </>
     )
 }

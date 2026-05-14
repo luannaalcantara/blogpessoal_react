@@ -73,65 +73,62 @@ function DeletarTema() {
     }
 
 
-   return (
-    <div className='min-h-screen bg-zinc-950 flex items-center justify-center px-4'>
+    return (
+        <div className='min-h-screen bg-[#1A090B] flex items-center justify-center px-4'>
 
-        <div className='w-full max-w-xl bg-zinc-900 rounded-2xl shadow-lg shadow-orange-500/10 overflow-hidden'>
+            <div className='  w-full  max-w-xl bg-[#260D10] rounded-2xl  shadow-2xl border border-[#4B1B20] overflow-hidden'>
 
-            <h1 className='text-4xl text-center font-bold text-orange-400 my-6'>
-                Deletar tema
-            </h1>
+                <h1 className='text-4xl text-center font-bold text-[#F8ECEE]  my-6 '>
+                    Deletar Tema
+                </h1>
 
-            <p className='text-center text-zinc-300 font-medium mb-6 px-4'>
-                Você tem certeza de que deseja apagar o tema a seguir?
-            </p>
-
-            <div className='border border-zinc-700 flex flex-col rounded-2xl overflow-hidden'>
-
-                <header
-                    className='py-3 px-6 bg-orange-500 text-white font-bold text-2xl'
-                >
-                    Tema
-                </header>
-
-                <p className='p-8 text-2xl text-white bg-zinc-950 h-full'>
-                    {tema.descricao}
+                <p className=' text-center text-[#D78E96] font-medium mb-6 px-6 '>
+                    Você tem certeza de que deseja apagar o tema a seguir?
                 </p>
 
-                <div className="flex">
+                <div className='  border  border-[#4B1B20] flex flex-col rounded-2xl overflow-hidden mx-6  mb-6 '>
 
-                    <button
-                        className='text-white bg-zinc-700 hover:bg-zinc-600 w-full py-3 transition duration-300'
-                        onClick={retornar}
-                    >
-                        Não
-                    </button>
+                    <header
+                        className='py-3 px-6 bg-[#BD4251] text-[#F8ECEE]  font-bold text-2xl' >
+                        Tema
+                    </header>
 
-                    <button
-                        className='w-full text-white bg-red-500 hover:bg-red-600 
-                        flex items-center justify-center transition duration-300'
-                        onClick={deletarTema}
-                    >
+                    <p className='p-8 text-2xl text-[#F8ECEE] bg-[#1A090B] h-full'>
+                        {tema.descricao}
+                    </p>
 
-                        {isLoading ?
+                    <div className="flex">
 
-                            <ClipLoader
-                                color="#ffffff"
-                                size={24}
-                            />
+                        <button  className=' text-[#F8ECEE] bg-[#4B1B20] hover:bg-[#712830] w-full
+                        py-3  transition-all  duration-300'
+                            onClick={retornar}  >
+                            Não
+                        </button>
 
-                            :
+                        <button
+                            className='  w-full  text-[#F8ECEE] bg-[#BD4251] hover:bg-[#973540] flex items-center justify-center
+                        transition-all duration-300'
+                            onClick={deletarTema} >
 
-                            <span>Sim</span>
-                        }
+                            {isLoading ?
 
-                    </button>
+                                <ClipLoader
+                                    color="#F8ECEE"
+                                    size={24}
+                                />
 
+                                :
+
+                                <span>Sim</span>
+                            }
+
+                        </button>
+
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-)
+    )
 }
 
 export default DeletarTema

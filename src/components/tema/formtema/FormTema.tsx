@@ -91,11 +91,13 @@ function FormTema() {
     }
 
     return (
-        <div className="min-h-screen bg-zinc-950 flex justify-center items-center px-4">
+        <div className="min-h-screen flex items-center justify-center bg-[#1A090B] px-4">
 
-            <div className="w-full max-w-2xl bg-zinc-900 rounded-2xl shadow-lg shadow-orange-500/10 p-8">
+            <div className=" w-full max-w-2xl bg-[#260D10] border border-[#4B1B20] rounded-2xl shadow-2xl p-8
+        ">
 
-                <h1 className="text-4xl text-center font-bold text-orange-400 my-6">
+                <h1 className=" text-4xl font-bold text-center text-[#F8ECEE] mb-8
+            ">
                     {id === undefined ? 'Cadastrar Tema' : 'Editar Tema'}
                 </h1>
 
@@ -108,36 +110,37 @@ function FormTema() {
 
                         <label
                             htmlFor="descricao"
-                            className="text-zinc-300"
+                            className="text-[#F2D9DC] font-medium"
                         >
                             Descrição do Tema
                         </label>
 
                         <input
-                            type="text"
-                            placeholder="Descreva aqui seu tema"
-                            name='descricao'
-                            className="bg-zinc-950 border border-zinc-700 rounded-lg p-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-orange-500 transition"
+                            type="text" placeholder="Descreva aqui seu tema..." name="descricao" className=" bg-[#1A090B] border
+                            border-[#712830] rounded-xl p-3 text-[#F8ECEE] placeholder:text-[#D78E96] focus:outline-none
+                            focus:ring-2 focus:ring-[#CA6873] focus:border-[#CA6873] transition-all duration-300 "
                             value={tema.descricao || ''}
-                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                                atualizarEstado(e)
+                            }
                         />
+
                     </div>
 
                     <button
-                        className="rounded-lg text-white bg-orange-500 hover:bg-orange-600 py-3 flex justify-center transition duration-300 shadow-lg shadow-orange-500/30 font-semibold"
-                        type="submit"
-                    >
-                        {isLoading ?
-
+                        className=" bg-[#BD4251]  hover:bg-[#973540] text-[#F8ECEE]  font-semibold rounded-xl py-3 w-1/2
+                        mx-auto flex justify-center items-center transition-all duration-300  hover:scale-105 "
+                        type="submit"  >
+                        {isLoading ? (
                             <ClipLoader
-                                color="#ffffff"
+                                color='#F8ECEE'
                                 size={24}
-                            /> :
-
+                            />
+                        ) : (
                             <span>
                                 {id === undefined ? 'Cadastrar' : 'Atualizar'}
                             </span>
-                        }
+                        )}
                     </button>
 
                 </form>

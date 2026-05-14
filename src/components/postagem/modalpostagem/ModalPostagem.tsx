@@ -5,29 +5,45 @@ import FormPostagem from '../formpostagem/FormPostagem';
 
 function ModalPostagem() {
     return (
-    <>
-        <Popup
-            trigger={
-                <button
-                    className='border border-orange-500 text-orange-400 rounded-lg px-5 py-2 
-                    hover:bg-orange-500 hover:text-white transition duration-300
-                    shadow-md shadow-orange-500/20'
-                >
-                    Nova Postagem
-                </button>
-            }
-            modal
-            contentStyle={{
-                borderRadius: '1rem',
-                paddingBottom: '2rem',
-                background: '#18181b',
-                border: '1px solid #3f3f46'
-            }}
-        >
-            <FormPostagem />
-        </Popup>
-    </>
-);
+        <>
+            <Popup
+                trigger={
+                    <button
+                        className='
+                            border
+                            border-[#BD4251]
+                            text-[#F8ECEE]
+                            bg-[#260D10]
+                            rounded-xl
+                            px-5
+                            py-3
+                            font-semibold
+                            hover:bg-[#BD4251]
+                            hover:text-white
+                            transition-all
+                            duration-300
+                            shadow-lg
+                            shadow-[#BD4251]/20
+                            hover:scale-105
+                        '
+                    >
+                        Nova Postagem
+                    </button>
+                }
+                modal
+                contentStyle={{
+                    borderRadius: '1rem',
+                    paddingBottom: '2rem',
+                    background: '#260D10',
+                    border: '1px solid #4B1B20',
+                    width: '90%',
+                    maxWidth: '700px'
+                }}
+            >
+                <FormPostagem />
+            </Popup>
+        </>
+    )
 }
 
-export default ModalPostagem;
+export default ModalPostagem

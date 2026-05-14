@@ -73,33 +73,75 @@ function DeletarPostagem() {
     }
 
     return (
-        <div className='min-h-screen bg-zinc-950 flex items-center justify-center px-4'>
+        <div className='min-h-screen bg-[#1A090B] flex items-center justify-center px-4'>
 
-            <div className='w-full max-w-2xl bg-zinc-900 rounded-2xl shadow-lg shadow-orange-500/10 overflow-hidden'>
+            <div className='
+        w-full
+        max-w-2xl
+        bg-[#260D10]
+        rounded-2xl
+        shadow-2xl
+        border
+        border-[#4B1B20]
+        overflow-hidden
+    '>
 
-                <h1 className='text-4xl text-center font-bold text-orange-400 my-6'>
+                <h1 className='
+            text-4xl
+            text-center
+            font-bold
+            text-[#F8ECEE]
+            my-6
+        '>
                     Deletar Postagem
                 </h1>
 
-                <p className='text-center text-zinc-300 font-medium mb-6 px-4'>
+                <p className='
+            text-center
+            text-[#D78E96]
+            font-medium
+            mb-6
+            px-6
+        '>
                     Você tem certeza de que deseja apagar a postagem a seguir?
                 </p>
 
-                <div className='border border-zinc-700 flex flex-col rounded-2xl overflow-hidden'>
+                <div className='
+            border
+            border-[#4B1B20]
+            flex
+            flex-col
+            rounded-2xl
+            overflow-hidden
+            mx-6
+            mb-6
+        '>
 
                     <header
-                        className='py-3 px-6 bg-orange-500 text-white font-bold text-2xl'
+                        className='
+                    py-3
+                    px-6
+                    bg-[#BD4251]
+                    text-[#F8ECEE]
+                    font-bold
+                    text-2xl
+                '
                     >
                         Postagem
                     </header>
 
-                    <div className="p-6 bg-zinc-950">
+                    <div className="p-6 bg-[#1A090B]">
 
-                        <p className='text-2xl text-white font-semibold mb-3'>
+                        <p className='
+                    text-2xl
+                    text-[#F8ECEE]
+                    font-semibold
+                    mb-3
+                '>
                             {postagem.titulo}
                         </p>
 
-                        <p className='text-zinc-300'>
+                        <p className='text-[#D78E96] leading-relaxed'>
                             {postagem.texto}
                         </p>
 
@@ -108,24 +150,43 @@ function DeletarPostagem() {
                     <div className="flex">
 
                         <button
-                            className='text-white bg-zinc-700 hover:bg-zinc-600 w-full py-3 transition duration-300'
+                            className='
+                        text-[#F8ECEE]
+                        bg-[#4B1B20]
+                        hover:bg-[#712830]
+                        w-full
+                        py-3
+                        transition-all
+                        duration-300
+                    '
                             onClick={retornar}
                         >
                             Não
                         </button>
 
                         <button
-                            className='w-full text-white bg-red-500 hover:bg-red-600 
-                        flex items-center justify-center transition duration-300'
+                            className='
+                        w-full
+                        text-[#F8ECEE]
+                        bg-[#BD4251]
+                        hover:bg-[#973540]
+                        flex
+                        items-center
+                        justify-center
+                        transition-all
+                        duration-300
+                    '
                             onClick={deletarPostagem}
                         >
 
                             {isLoading ?
 
                                 <ClipLoader
-                                    color="#ffffff"
+                                    color="#F8ECEE"
                                     size={24}
-                                /> :
+                                />
+
+                                :
 
                                 <span>Sim</span>
                             }

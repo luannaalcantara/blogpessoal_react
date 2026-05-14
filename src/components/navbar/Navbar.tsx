@@ -1,6 +1,7 @@
-import { useContext } from "react";
+import { useContext, type ReactNode } from "react";
 import { Link, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../contexts/AuthContext";
+import { ToastAlerta } from "../../utils/ToastAlerta";
 
 function Navbar() {
 
@@ -11,72 +12,67 @@ function Navbar() {
     function logout() {
 
         handleLogout()
-        alert('O Usuário foi desconectado com sucesso!')
+        ToastAlerta(
+            'O Usuário foi desconectado com sucesso!',
+            'info'
+        )
+
         navigate('/')
     }
 
-    return (
-        <>
-            <div className='w-full flex justify-center py-4 
-                            bg-zinc-950 text-white border-b border-zinc-800'>
+    let component: ReactNode
 
-                <div className="container flex justify-between items-center text-lg mx-8">
+    if (usuario.token !== "") {
 
-                    {/* LOGO */}
-                    <Link 
-                        to='/home' 
-                        className="text-2xl font-bold text-orange-400 hover:text-orange-300 transition"
-                    >
-                        Blog Pessoal
+        component = (
+
+            <div className='
+                w-full flex justify-center py-4 bg-[#260D10] border-b border-[#4B1B20] shadow-lg shadow-black/20'>
+
+                <div className="
+                    container flex justify-between items-center mx-8">
+
+                    <Link
+                        to='/home'
+                        className='text-3xl font-bold text-[#F8ECEE] hover:text-[#CA6873] transition-all duration-300 '> Blog Pessoal
                     </Link>
 
-                    {/* USUÁRIO */}
-                    <p className="text-zinc-300">
-                        Bem-vinda, <span className="text-orange-400 font-semibold">{usuario.nome}</span>
-                    </p>
+                    <div className='flex gap-6 text-[#F2D9DC] font-medium'>
 
-                    {/* MENU */}
-                    <div className='flex gap-6 text-zinc-300'>
-
-                        <Link 
-                            to='/postagens' 
-                            className='hover:text-orange-400 transition'
-                        >
-                         <Link to='/postagens' className='hover:underline'>Postagens</Link>
+                        <Link
+                            to='/postagens'
+                            className='hover:text-[#CA6873] transition-all duration-300'> Postagens
                         </Link>
 
-                        <Link 
-                            to='/temas' 
-                            className='hover:text-orange-400 transition'
-                        >
-                          <Link to='/temas' className='hover:underline'>Temas</Link>
+                        <Link
+                            to='/temas'
+                            className=' hover:text-[#CA6873] transition-all duration-300 '> Temas
                         </Link>
 
-                        <Link 
-                            to='/cadastrartema' 
-                            className='hover:text-orange-400 transition'
-                        >
-                        <Link to='/cadastrartema' className='hover:underline'>Cadastrar tema</Link>
+                        <Link
+                            to='/cadastrartema'
+                            className=' hover:text-[#CA6873] transition-all duration-300 '> Cadastrar tema
                         </Link>
 
-                        <Link 
-                            to='/perfil' 
-                            className='hover:text-orange-400 transition'
-                        >
-                            Perfil
+                        <Link
+                            to='/perfil'
+                            className='hover:text-[#CA6873] transition-all duration-300 '> Perfil
                         </Link>
 
-                        <Link 
-                            to='' 
-                            onClick={logout} 
-                            className='hover:text-red-500 transition'
-                        >
-                            Sair
+                        <Link
+                            to='' onClick={logout}
+                                className=' hover:text-[#BD4251] transition-all duration-300'> Sair
                         </Link>
 
                     </div>
                 </div>
             </div>
+        )
+    }
+
+    return (
+        <>
+            {component}
         </>
     )
 }

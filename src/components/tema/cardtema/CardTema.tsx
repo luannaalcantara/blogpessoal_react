@@ -8,30 +8,90 @@ interface CardTemaProps {
 
 function CardTema({ tema }: CardTemaProps) {
   return (
-    <div className='border border-zinc-700 bg-zinc-900 flex flex-col rounded-2xl overflow-hidden justify-between shadow-lg shadow-orange-500/10 hover:scale-[1.02] transition duration-300'>
+    <div className='
+    border
+    border-[#4B1B20]
+    bg-[#260D10]
+    flex
+    flex-col
+    rounded-2xl
+    overflow-hidden
+    justify-between
+    shadow-2xl
+    hover:scale-[1.02]
+    hover:shadow-[#BD4251]/20
+    transition-all
+    duration-300
+  '>
 
-      <header className='py-3 px-6 bg-orange-500 text-white font-bold text-2xl'>
+      {/* HEADER */}
+      <header className='
+      py-3
+      px-6
+      bg-[#BD4251]
+      text-[#F8ECEE]
+      font-bold
+      text-2xl
+    '>
         Tema
       </header>
 
-      <p className='p-8 text-2xl text-white bg-zinc-950 h-full'>
-        {tema.descricao}
-      </p>
+      {/* CONTEÚDO */}
+      <div className='
+      bg-[#1A090B]
+      flex
+      items-center
+      justify-center
+      p-8
+      min-h-[180px]
+    '>
 
+        <p className='
+        text-2xl
+        text-[#F8ECEE]
+        text-center
+        font-semibold
+        break-words
+      '>
+          {tema.descricao}
+        </p>
+
+      </div>
+
+      {/* BOTÕES */}
       <div className="flex">
 
         <Link
           to={`/editartema/${tema.id}`}
-          className='w-full text-white bg-zinc-700 hover:bg-orange-500
-        flex items-center justify-center py-3 transition duration-300'
+          className='
+          w-full
+          text-[#F8ECEE]
+          bg-[#4B1B20]
+          hover:bg-[#712830]
+          flex
+          items-center
+          justify-center
+          py-3
+          transition-all
+          duration-300
+        '
         >
           <button>Editar</button>
         </Link>
 
         <Link
           to={`/deletartema/${tema.id}`}
-          className='text-white bg-red-500 hover:bg-red-600 w-full
-        flex items-center justify-center transition duration-300'
+          className='
+          text-[#F8ECEE]
+          bg-[#BD4251]
+          hover:bg-[#973540]
+          w-full
+          flex
+          items-center
+          justify-center
+          transition-all
+          duration-300
+        '
         >
           <button>Deletar</button>
         </Link>
